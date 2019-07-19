@@ -1,0 +1,13 @@
+server:
+  port: 8761
+eureka:
+  instance:
+    hostname: peer1
+  client:
+    fetch-registry: true
+    register-with-eureka: true
+    serviceUrl:
+      defaultZone: http://peer2:8769/eureka/  #其它注册中心地址，如果有多个用逗号隔开
+spring:
+  application:
+    name: eureka-server1
