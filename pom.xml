@@ -28,6 +28,7 @@
         <module>service-miya</module>
         <module>service-turbine</module>
         <module>service-gateway</module>
+        <module>service-gateway-predicate</module>
     </modules>
 
     <properties>
