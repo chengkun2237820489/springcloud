@@ -8,9 +8,9 @@
         <version>0.0.1-SNAPSHOT</version>
     </parent>
     <groupId>com.chengkun</groupId>
-    <artifactId>service-gateway-predicate</artifactId>
+    <artifactId>service-gateway-filter</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>service-gateway-predicate</name>
+    <name>service-gateway-filter</name>
     <packaging>jar</packaging>
 
     <dependencies>

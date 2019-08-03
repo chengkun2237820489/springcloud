@@ -14,6 +14,10 @@
         <module name="eureka-server2" />
         <module name="ribbon" />
         <module name="service-feign" />
+        <module name="service-gateway" />
+        <module name="service-gateway-filter" />
+        <module name="service-gateway-limiter" />
+        <module name="service-gateway-predicate" />
         <module name="service-hi" />
         <module name="service-miya" />
         <module name="service-ribbon" />
@@ -36,6 +40,10 @@
       <module name="eureka-server2" options="-parameters" />
       <module name="ribbon" options="-parameters" />
       <module name="service-feign" options="-parameters" />
+      <module name="service-gateway" options="-parameters" />
+      <module name="service-gateway-filter" options="-parameters" />
+      <module name="service-gateway-limiter" options="-parameters" />
+      <module name="service-gateway-predicate" options="-parameters" />
       <module name="service-hi" options="-parameters" />
       <module name="service-miya" options="-parameters" />
       <module name="service-ribbon" options="-parameters" />

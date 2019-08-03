@@ -1,0 +1,24 @@
+
+server:
+  port: 8083
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: limit_route
+          uri: http://httpbin.org:80/get
+          predicates:
+            - After= 2019-07-30T23:59:59.789+08:00[Asia/Shanghai]
+          filters:
+            - name: RequestRateLimiter
+              args:
+                key-resolver: '#{@userKeyResolver}'
+                redis-rate-limiter.replenishRate: 1
+                redis-rate-limiter.burstCapacity: 3
+  application:
+    name: gateway-limiter
+  redis:
+    host: localhost
+    port: 6379
+    database: 0
+    password: insightv4

@@ -21,6 +21,8 @@
         <option value="$PROJECT_DIR$/eureka-server1/pom.xml" />
         <option value="$PROJECT_DIR$/eureak-server/pom.xml" />
         <option value="$PROJECT_DIR$/service-turbine/pom.xml" />
+        <option value="$PROJECT_DIR$/service-gateway-filter/pom.xml" />
+        <option value="$PROJECT_DIR$/service-gateway-limiter/pom.xml" />
       </list>
     </option>
   </component>
