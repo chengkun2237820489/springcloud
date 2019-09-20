@@ -39,7 +39,7 @@ spring:
         - id: elapse_route
           uri: http://httpbin.org:80/get
           filters:
-            - RequestTime=false
+            - RequestTime=true
           predicates:
             - After= 2019-07-30T23:59:59.789+08:00[Asia/Shanghai]
   profiles: elapse_route
