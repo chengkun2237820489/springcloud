@@ -7,7 +7,7 @@ eureka:
     fetch-registry: true
     register-with-eureka: true
     serviceUrl:
-      defaultZone: http://peer1:8761/eureka/
+      defaultZone: http://peer1:8761/eureka/ #eureka注册地址
 spring:
   application:
     name: eureka-server2
