@@ -31,6 +31,9 @@
         <module>service-gateway-predicate</module>
         <module>service-gateway-filter</module>
         <module>service-gateway-limiter</module>
+        <module>spring-cloud-lcn</module>
+        <module>tc-client-1</module>
+        <module>tc-client-2</module>
     </modules>
 
     <properties>

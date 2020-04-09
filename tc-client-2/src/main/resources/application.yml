@@ -1,0 +1,71 @@
+server:
+  port: 7972
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+spring:
+  application:
+    name: tc-client-2
+  datasource:
+    username: 'root'
+    password: '!Sungrow2011'
+    url: jdbc:mysql://127.0.0.1:3306/tx_manager?useUnicode=true&characterEncoding=utf8&serverTimezone=UTC
+    driver-class-name: com.mysql.jdbc.Driver
+    type: com.alibaba.druid.pool.DruidDataSource
+    druid:
+      initial-size: 5
+      min-idle: 5
+      max-active: 20
+      max-wait: 60000
+      time-between-eviction-runs-millis: 60000
+      min-evictable-idle-time-millis: 300000
+      validation-query: SELECT 1 FROM DUAL
+      test-while-idle: true
+      test-on-borrow: false
+      test-on-return: false
+      pool-prepared-statements: true
+      #\u914D\u7F6E\u76D1\u63A7\u7EDF\u8BA1\u62E6\u622A\u7684filters\uFF0C\u53BB\u6389\u540E\u76D1\u63A7\u754C\u9762sql\u65E0\u6CD5\u7EDF\u8BA1\uFF0C'wall'\u7528\u4E8E\u9632\u706B\u5899
+      filters: stat,wall,lombok
+      max-pool-prepared-statement-per-connection-size: 20
+      use-global-data-source-stat: true
+      connection-properties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=500
+  redis:
+    database: 0
+    password: insightv4
+    port: 6379
+    host: 127.0.0.1
+    timeout: 60000
+  transaction:
+    rollback-on-commit-failure: true
+
+#mybatis\u914D\u7F6E
+mybatis:
+  mapper-locations: classpath*:com/chengkun/**/*Mapper.xml
+  type-aliases-package: com.chengkun.cloud.pojo
+  configuration:
+    map-underscore-to-camel-case: true
+tx-lcn:
+  client:
+    manager-address: 127.0.0.1:8070
+  logger:
+    driver-class-name: ${spring.datasource.driver-class-name}
+    enabled: true
+    jdbc-url: ${spring.datasource.url}
+    password: ${spring.datasource.password}
+    username: ${spring.datasource.username}
+  ribbon:
+    loadbalancer:
+      dtx:
+        enabled: true
+feign:
+  client:
+    config:
+      default:
+        connect-timeout: 10000
+        read-timeout: 20000
+      service-test:
+        connect-timeout: 10000
+        read-timeout: 20000
+  hystrix:
+    enabled: true
